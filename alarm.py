@@ -19,11 +19,11 @@ class Alarm:
             return True
         return False
  
-    def snooze_alarm(self):
+    def snooze_alarm_time(self):
         if self.snooze_count < 3:
             self.snooze_count += 1
             self.ctime += 5
-            self.time += self.time + timedelta(minutes=5)
+            self.time = self.time + timedelta(minutes=5)
             print(f"Alarm snoozed. Next alert in 5 minutes ({self.snooze_count}/3 snoozes used).")
             return True
         else:
